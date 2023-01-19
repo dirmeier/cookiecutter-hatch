@@ -1,0 +1,13 @@
+{
+  "full_name": "Simon Dirmeier",
+  "email": "sfyrbnd @ pm me",
+  "github_username": "dirmeier",
+  "project_name": "Hatch package template",
+  "project_short_description": "A hatch package that does nothing so far",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "pypi_username": "{{ cookiecutter.github_username }}",
+  "version": "0.0.1",
+  "_copy_without_render": [
+      "**/workflows/*.yaml"
+  ]
+}
