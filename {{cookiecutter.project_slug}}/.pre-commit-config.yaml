@@ -4,6 +4,7 @@ repos:
     hooks:
     - id: check-docstring-first
     - id: check-added-large-files
+      args: ['--maxkb=1000']
     - id: check-merge-conflict
     - id: check-toml
     - id: check-yaml
@@ -28,14 +29,14 @@ repos:
     files: "({{cookiecutter.project_slug}}|tests)"
 
 - repo: https://github.com/pycqa/isort
-  rev: 5.10.1
+  rev: 5.12.0
   hooks:
   - id: isort
     args: ["--settings-path=pyproject.toml"]
     files: "({{cookiecutter.project_slug}}|tests)"
 
 - repo: https://github.com/pycqa/bandit
-  rev: 1.7.0
+  rev: 1.7.1
   hooks:
   - id: bandit
     language: python

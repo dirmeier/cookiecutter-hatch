@@ -18,7 +18,6 @@ TODO
 
 ## Installation
 
-
 To install the latest GitHub <RELEASE>, just call the following on the
 command line:
 
