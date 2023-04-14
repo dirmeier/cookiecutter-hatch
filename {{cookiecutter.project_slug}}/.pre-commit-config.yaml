@@ -42,7 +42,9 @@ repos:
     language: python
     language_version: python3
     types: [python]
-    files: "({c{ookiecutter.project_slug}}|tests)"
+    args: ["-c", "pyproject.toml"]
+    additional_dependencies: ["toml"]
+    files: "({{cookiecutter.project_slug}}|tests)"
 
 - repo: https://github.com/PyCQA/flake8
   rev: 5.0.1
