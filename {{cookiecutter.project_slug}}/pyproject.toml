@@ -45,8 +45,8 @@ dependencies = [
 
 
 [tool.hatch.envs.test.scripts]
-lint = 'pylint {{cookiecutter.project_slug}} tests'
-test = 'pytest -v --doctest-modules --cov=./{{cookiecutter.project_slug}} --cov-report=xml {{cookiecutter.project_slug}} tests'
+lint = 'pylint {{cookiecutter.project_slug}}'
+test = 'pytest -v --doctest-modules --cov=./{{cookiecutter.project_slug}} --cov-report=xml {{cookiecutter.project_slug}} '
 
 [tool.black]
 line-length = 80
