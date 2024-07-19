@@ -46,6 +46,7 @@ dependencies = [
 
 [tool.hatch.envs.test.scripts]
 lint = 'ruff check {{cookiecutter.project_slug}}'
+format = 'ruff format {{cookiecutter.project_slug}}'
 test = 'pytest -v --doctest-modules --cov=./{{cookiecutter.project_slug}} --cov-report=xml {{cookiecutter.project_slug}} '
 
 [tool.bandit]
@@ -56,7 +57,7 @@ line-length = 80
 exclude = ["*_test.py", "docs/**", "examples/**"]
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F"]
+select = ["E", "F"]
 extend-select = [
   "UP", "D", "I", "PL", "S"
 ]
