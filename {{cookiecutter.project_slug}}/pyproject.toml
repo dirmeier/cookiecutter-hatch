@@ -37,6 +37,10 @@ exclude = [
     "/.pre-commit-config.yaml"
 ]
 
+[tool.hatch.envs.default]
+type = "virtual"
+path = ".venv"
+
 [tool.hatch.envs.test]
 dependencies = [
     "ruff>=0.3.0",
