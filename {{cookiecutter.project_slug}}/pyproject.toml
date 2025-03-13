@@ -7,25 +7,27 @@ name =  "{{cookiecutter.project_slug}}"
 description = "{{cookiecutter.project_short_description}}"
 authors = [{name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}"}]
 readme = "README.md"
-license = "Apache-2.0"
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+license = {file = "LICENSE"}
 keywords = []
 classifiers = [
     "Development Status :: 1 - Planning",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
-requires-python = ">=3.9"
-dependencies = [
-]
+requires-python = ">=3.10"
+dependencies = []
 dynamic = ["version"]
 
+[project.optional-dependencies]
+all = []
+
 [project.urls]
-homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+Documentation = "https://{{cookiecutter.project_slug}}.rtfd.io"
+Homepage = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
 
 [tool.hatch.version]
 path = "{{cookiecutter.project_slug}}/__init__.py"
@@ -45,19 +47,20 @@ dependencies = [
 ]
 
 [tool.hatch.envs.test.scripts]
-lint = 'ruff check {{cookiecutter.project_slug}}'
-format = 'ruff format {{cookiecutter.project_slug}}'
+lint = 'ruff check --select I --fix {{cookiecutter.project_slug}} examples'
+format = 'ruff format {{cookiecutter.project_slug}} examples'
 test = 'pytest -v --doctest-modules --cov=./{{cookiecutter.project_slug}} --cov-report=xml {{cookiecutter.project_slug}} '
 
 [tool.bandit]
-skips = ["B101"]
+skips = ["B101", "B310"]
 
 [tool.ruff]
+indent-width = 2
 line-length = 80
 exclude = ["*_test.py", "docs/**", "examples/**"]
 
 [tool.ruff.lint]
-select = ["E", "F"]
+select = ["ANN", "D", "E", "F", "W", "I001"]
 extend-select = [
   "UP", "D", "I", "PL", "S"
 ]

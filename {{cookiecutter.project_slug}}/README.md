@@ -19,6 +19,12 @@ TODO
 
 ## Installation
 
+To install the package from PyPi, call:
+
+```bash
+pip install {{ cookiecutter.project_slug }}
+```
+
 To install the latest GitHub <RELEASE>, just call the following on the
 command line:
 
@@ -30,7 +36,7 @@ pip install git+https://github.com/{{ cookiecutter.github_username }}/{{ cookiec
 
 Contributions in the form of pull requests are more than welcome. In order to contribute:
 
-1) fork and download the repository,
+1) Fork and clone the repository,
 2) create a branch with the name of your new feature (something like `issue/fix-bug-related-to-something` or `feature/implement-new-feature`),
 3) install `{{ cookiecutter.project_slug }}`
 4) develop code, commit changes and push it to your branch,
